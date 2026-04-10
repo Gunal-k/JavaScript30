@@ -104,6 +104,11 @@
       const seconds = now.getSeconds();
       const secondsDegrees = ((seconds / 60) * 360) + 90;
       document.querySelector('.second-hand').style.transform = `rotate(${secondsDegrees}deg)`;
+      if(seconds === 0){
+        document.querySelector('.second-hand').style.transition = 'none';
+      } else {
+        document.querySelector('.second-hand').style.transition = 'all 0.05s';
+      }
 
       const mins = now.getMinutes();
       const minsDegrees = ((mins / 60) * 360) + ((seconds/60)*6) + 90;
